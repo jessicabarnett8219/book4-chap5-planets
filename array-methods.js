@@ -13,24 +13,27 @@ planets.forEach(planet => {
 
 // Use the map method to create a new array where the first letter of each planet is capitalized. Use the toUpperCase() method on strings.
 
-let capitalizedPlanets = planets.map( (planet) => {
+const capitalizedPlanets = planets.map( (planet) => {
     return planet.charAt(0).toUpperCase() + planet.slice(1)
   }
 )
-
 console.log(capitalizedPlanets)
 
 
+// Use the filter method to create a new array that contains planets with the letter 'e'. Use the `includes() method on strings.
 
+const planetsWithE = planets.filter( planet => {
+  return planet.includes("e")
+})
 
-/*
-    Use the filter method to create a new array that
-    contains planets with the letter 'e'. Use the `includes()`
-    method on strings.
-
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-*/
+console.log(planetsWithE)
 
 
 // Use the reduce method to create a sentence from the words in the following array
-// const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]
+const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]
+
+let sentence = words.reduce( (a, b) => {
+  return `${a} ${b}`
+})
+
+console.log(sentence)
